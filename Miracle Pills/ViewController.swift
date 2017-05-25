@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var statePicker: UIPickerView!
-    //test
+    
     @IBOutlet weak var statePickerBtn: UIButton!
     
     let states = ["Alaska", "Arkansas", "Alabama","California","Maine","New York"]
