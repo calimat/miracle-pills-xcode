@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         statePickerBtn.setTitle(states[row], for: UIControlState.normal)
-        statePicker.isHidden = true 
+        statePicker.isHidden = true
     }
 
 }
