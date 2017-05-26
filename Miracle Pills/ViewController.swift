@@ -14,6 +14,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var statePickerBtn: UIButton!
     
+    @IBOutlet weak var countryTxtFld: UITextField!
+    @IBOutlet weak var countryLbl: UILabel!
+    @IBOutlet weak var zipCodeLbl: UILabel!
+    @IBOutlet weak var zipCodeTxtField: UITextField!
     let states = ["Alaska", "Arkansas", "Alabama","California","Maine","New York"]
     
     
@@ -28,9 +32,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func enableViews(enabled : Bool)
+    {
+        statePicker.isHidden = !enabled
+        countryLbl.isHidden = enabled
+        countryTxtFld.isHidden = enabled
+        zipCodeLbl.isHidden = enabled
+        zipCodeTxtField.isHidden = enabled
+    }
+    
 
     @IBAction func stateBtnPressed(_ sender: Any) {
-        statePicker.isHidden = false
+        enableViews(enabled: true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -48,7 +62,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         statePickerBtn.setTitle(states[row], for: UIControlState.normal)
-        statePicker.isHidden = true
+        enableViews(enabled: false)
     }
 
 }
